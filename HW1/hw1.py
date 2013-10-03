@@ -32,6 +32,7 @@ print #line of whitespace
 print "The square root of the quadratic equation x^2-5.86x+8.5408 is:"
 print "x1 =", x1, "x2 =", x2
 print #line of whitespace
+print 
 
 ###
 ### Problem 2
