@@ -9,11 +9,11 @@
 # you are done.  When you are done, running this file should compute and
 # print the answers to all the problems.
 
-import math                     # makes the math.sqrt function available
-import hw1_test                # makes the variables within hw1_test available
+import math                # makes the math.sqrt function available
+import hw1_test            # makes the variables within hw1_test available
 
 from hw1_test import *        # creates bindings in current scope to
-                                # to all objects defined within hw1_test
+                              # to all objects defined within hw1_test
 
 ###
 ### Problem 1
@@ -32,6 +32,7 @@ print #line of whitespace
 print "The square root of the quadratic equation x^2-5.86x+8.5408 is:"
 print "x1 =", x1, "x2 =", x2
 print #line of whitespace
+print 
 
 ###
 ### Problem 2
