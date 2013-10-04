@@ -25,8 +25,8 @@ print "Problem 1 solution follows:"
 # b+sqrt(b^2 - 4 * a * c)/2 * 1 and 
 # b-sqrt(b^2 - 4 * a * c)/2 * 1
 
-x1 = (5.86+math.sqrt(5.86**2-4*1*8.5408))/2*1
-x2 = (5.86-math.sqrt(5.86**2-4*1*8.5408))/2*1
+x1 = (-5.86+math.sqrt(5.86**2-4*1*8.5408))/2
+x2 = (-5.86-math.sqrt(5.86**2-4*1*8.5408))/2
 
 print #line of whitespace
 print "The square root of the quadratic equation x^2-5.86x+8.5408 is:"
