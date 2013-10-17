@@ -1,7 +1,7 @@
 # Grader name: Kyle Schaefer
 # Evergreen Login: schkyl10
 
-from lab2 import *
+from lab2 import n
 
 x = 0
 
