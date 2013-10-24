@@ -1,0 +1,81 @@
+Name: Jessica Morton
+Evergreen Login: morjes14
+Computer Science Foundations
+Programming as a Way of Life
+Fall 2013
+Homework 3 
+
+For each problem that requires a written answer, write (or copy-and-paste)
+your answers in this file.  When you are done, you should have replaced all
+the ellipses (the three dots) with your answers.
+
+At the end, you will turn in this file along with your modified
+dna_analysis.py program.
+
+
+Problem 1:
+
+(No answers in this file.)
+
+Problem 2:
+
+GC-content: 0.43029262963
+
+Problem 3:
+
+Exception error. There was a NameError which means that a function or 
+operation was applied to an object of inappropriate type. In the rest of the 
+error message, Python uses a stack traceback to print the name of the function,
+and the name of the function that called it, and the name of the function that 
+called that function, all the way back to the beginning of the program. 
+
+In this program, the exception occurred on line 40. There was no function that 
+had been called yet, so the error just displayed the line that had the
+exception error in it. The error occurred because 'linenum' is no longer
+defined since we commented it out. The for loop on line 39 uses the the 
+variable 'linenum' to increment through the file and updates 'linenum' to what
+the current line number is, or in other words, the number of lines read so far.
+
+Since we commented out 'linenum', the for loop on line 39 can no longer use 
+that variable to increment through the lines in the file. Therefore, Python 
+gave an exception error. And, because 'linenum' was commented out, the program 
+was never able to reach the 'seq' variable.
+
+When the 'gc_count' line is commented out, Python returns another exception
+error, a NameError just like when 'linenum' was commented out. The for loop in
+line 59 is supposed to use the variable 'gc_count' to hold the number of G and
+C nucleotides seen so far in 'seq'. When 'gc_count' is commented out, we can no
+longer use that variable to increment the count through 'seq' in the file.
+
+Problem 4:
+
+GC-content: 0.43029262963
+AT-content: 0.568993851852
+
+Collaboration:
+
+No one.
+
+Reflection:
+
+It took me about 3.5 hours to complete this homework. This was the easiest 
+programming homework that I've done so far out of the all the homework that 
+we've had. The most that I learned form this programming homework was how to 
+use the command prompt to run the program using different files within a
+directory on my computer. I also learned how to add more variables and
+computations to an existing program while keeping the original program looking
+clean and not changing the original program too much. I also learned more about
+for loops and if/else statements.
+
+There isn't anything that I wish I had known before I started or that I would
+do differently, but I will probably find something after I turn my homework 
+in and start talking with other students about how they did their homework.
+
+What helped me the most with this program was being able to compare my output
+to the expected output files. Being able to see what the expected output is 
+supposed to be helped me figure out what I needed to do for each problem and 
+how to find the answer. So I would advise other students to compare their
+output with the expected output and to look at the expected output before 
+starting their program. I would also advice students to know how to use the
+command prompt fairly well.
+
