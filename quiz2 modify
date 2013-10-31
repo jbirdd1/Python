@@ -14,7 +14,6 @@ def fib(n):
         fib = x + y
         x = y 
         y = fib
-        print fib
     return fib
     
 def sum(n):
@@ -23,7 +22,6 @@ def sum(n):
     for i in range(n):
         total = total + (3*x)
         x = x + 1
-        print total
     return total
 
 if series =='fibonacci':
