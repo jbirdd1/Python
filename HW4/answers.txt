@@ -1,0 +1,60 @@
+Name: Jessica Morton
+Evergreen Login: morjes14
+Computer Science Foundations
+Programming as a Way of Life
+Fall 2013
+Homework 4
+
+For each problem that requires a written answer, write (or copy-and-paste)
+your answers in this file.  When you are done, you should have replaced all
+the ellipses (the three dots) with your answers.
+
+At the end, you will turn in this file along with your modified
+dna_analysis.py program.
+
+Problem 5:
+
+G count: 5738773
+C count: 5879128
+A count: 7701287
+T count: 7661547
+
+Problem 6:
+
+All of the 11 .fastq files have different A, C, G, and T counts and most of
+them all have different total counts and seq lengths.  Also, all of the files
+have different GC-contents and AC-contents.
+
+test-high-gc-2 and test-moderate-gc-1 have the same Sum count of 39841 as well
+as the same seq length of 40000. However their A, C, G, and T counts are
+different.
+
+sample_1 and sample_2 have the same seq length of 27000000.
+
+test-high-gc-1, test-high-gc-2, test-moderate-gc-1, and test-moderate-gc-2 all
+have the same seq length of 40000.
+
+Problem 7:
+
+AT/GC Ratio: 1.32234161747
+
+Problem 8:
+
+GC Classification: moderate GC content
+
+Collaboration:
+
+No one.
+
+Reflection:
+
+I finished most of this assignment when I did HW3 including computing all of
+the outputs. So all I really had to do for this assignment was compare the
+outputs, get the AT/GC ratio, and categorize organisms. For Problem 8, I
+realized that I mis-calculated the AT/GC ratio because I wasn't dividing by the
+total count of A, C, G, and T. So I had to fix that. So, I learned that I made
+that mistake and how to correct it in order to get the correct classification.
+
+I can't think of anything that I would do differently or any advice I would
+give to future students. However, I am very happy that I worked ahead on this
+assignment by finishing the calculations of all of the added output early on.
