@@ -35,12 +35,17 @@ def state_edges(election_result_rows):
     The input list does has no duplicate states;
     that is, each state is represented at most once in the input list.
     """
-    response = []
-    for row in election_result_rows:
-        response.append({row.get("State"): row_to_edge(row)})
+    #response = []
+    #for row in election_result_rows:
+    #    response.append({row.get("State"): row_to_edge(row)})
     #print response
     #return response
-
+    
+    edge = {}
+    for row in election_result_rows:
+        edge = {row["State"]: row_to_edge(row)}
+        print edge
+        return edge
 
 ################################################################################
 # Problem 2: Find the most recent poll row
@@ -58,13 +63,13 @@ def most_recent_poll_row(poll_rows, pollster, state):
     Given a list of poll data rows, returns the most recent row with the
     specified pollster and state. If no such row exists, returns None.
     """
-    #tempList = []
-    #for row in poll_rows:
-      #  if row.get("State") == state and row.get("Pollster") == pollster:
-     #       tempList.append(row)
+    tempList = []
+    for row in poll_rows:
+        if row.get("State") == state and row.get("Pollster") == pollster:
+            tempList.append(row)
             
-    #for i in range(0,len(tempList)):
-    pass
+    for i in range(0,len(tempList)):
+        pass
 
 
 ################################################################################
@@ -92,8 +97,8 @@ def pollster_predictions(poll_rows):
     for row in poll_rows:
         response.append({row.get("Pollster"): {row.get("State"):(float(row.get("Dem"))-float(row.get("Rep")))}})
     # output Pollster: State: state_edges()
-    print response
-    return response
+    #print response
+    #return response
 
 
             
