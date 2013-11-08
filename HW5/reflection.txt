@@ -6,9 +6,14 @@ Homework 5: Election prediction
 
 Collaboration:
 
-...
+My boyfriend helped me on Problem's 1, 2, and 3.
 
 Reflection:
 
-...
+This was by far the most difficult homework. I didn't need any help with the
+previous 4 homework's, but this one I did. My boyfriend helped me with
+Problems 1, 2, and 3 of this assignment.
+
+The most I learned from this homework was how to create lists and dictionaries,
+and also about reading from .csv files. 
 

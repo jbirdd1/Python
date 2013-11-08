@@ -37,7 +37,7 @@ def state_edges(election_result_rows):
     """
     #response = []
     #for row in election_result_rows:
-    #    response.append({row.get("State"): row_to_edge(row)})
+    #    response.append({row["State"]: row_to_edge(row)})
     #print response
     #return response
     
@@ -68,10 +68,6 @@ def most_recent_poll_row(poll_rows, pollster, state):
         if row.get("State") == state and row.get("Pollster") == pollster:
             tempList.append(row)
             
-    for i in range(0,len(tempList)):
-        pass
-
-
 ################################################################################
 # Problem 3: Pollster predictions
 ################################################################################
