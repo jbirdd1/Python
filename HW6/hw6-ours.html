@@ -22,9 +22,7 @@ Problem 3: For Loops
 </h3>
 
 Python provides the <b>for loop</b> that can be used to simplify programs that 
-contain iteration. It is a simpler way to use iteration than using while loops.
-<br/>
-<br/>
+contain iteration. It is a simpler way to use iteration than using while loops.<br/>
 The general form of a <tt>for</tt> statement is:
 <blockquote><code>
 for <i>variable</i> in <i>sequence</i>:<br/>
@@ -36,7 +34,7 @@ Python code using <tt>for</tt> loops and <tt>if</tt> statements to print out
 the number of vowels and constants in the string.
 
 <h3>
-Problem 4: Lists
+Problem 4: Creating Lists
 </h3>
 
 A list is an ordered sequence of values, where each value is identified by an 
@@ -52,27 +50,47 @@ produces the output,
 [1, 2, 3]
 </code></blockquote>
 
-Create a list containing the values <tt>1,2,3,5,8,2,5.2</tt>. Then write Python 
+Create a list containing the values <tt>1, 2.2, 3, 4.2</tt>. Then write Python 
 code using a loop, that prints out each element in the list and prints out the 
 average value of all of the elements within the list.
 
 <h3>
-Problem 5: Indexing
+Problem 5: List Appending
 </h3>
 
-<!-- Add the text of your problem 5 here -->
+Python provides methods that operate on lists. For example, <tt>append</tt> will 
+add a new item to the end of a list.<br/>
+For example, the code,<br/>
+<blockquote><code>
+list1 = ["a", "b", "c"]<br/>
+list2 = ["d", "e"]<br/>
+list3 = list1 + list2<br/>
+<br/>
+list1.append(list2)<br/>
+print list3<br/>
+print list1<br/>
+</code></blockquote>
+produces the output,
+<blockquote><code>
+['a', 'b', 'c', 'd', 'e']<br/>
+['a', 'b', 'c', ['d', 'e']]
+</code></blockquote>
+
+Create another list containing the values <tt>5.2, 6.8, 7.5</tt>. Add your new 
+list to the list that you created in Problem 4 and print out the new average.
+You may use the built in <tt>sum</tt> function.
 
 <h3>
-Problem 6: Dictionaries
+Problem 6: List Indexing
 </h3>
 
-<!-- Add the text of your problem 6 here -->
+
 
 <h3>
-Problem 7: Functions
+Problem 7: Creating a Dictionary
 </h3>
 
-<!-- Add the text of your problem 7 here -->
+
 
 </body>
 
