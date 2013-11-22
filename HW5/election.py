@@ -35,17 +35,13 @@ def state_edges(election_result_rows):
     The input list does has no duplicate states;
     that is, each state is represented at most once in the input list.
     """
-    #response = []
-    #for row in election_result_rows:
-    #    response.append({row["State"]: row_to_edge(row)})
-    #print response
-    #return response
     
     edge = {}
     for row in election_result_rows:
-        edge = {row["State"]: row_to_edge(row)}
-        print edge
-        return edge
+        edge.update({row["State"]: float("%0.1f" % row_to_edge(row))})
+
+    return edge
+
 
 ################################################################################
 # Problem 2: Find the most recent poll row
