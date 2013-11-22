@@ -38,8 +38,7 @@ def state_edges(election_result_rows):
     
     edge = {}
     for row in election_result_rows:
-        edge.update({row["State"]: float("%0.1f" % row_to_edge(row))})
-
+        edge.update({row["State"]: float(row_to_edge(row))})
     return edge
 
 
@@ -60,10 +59,25 @@ def most_recent_poll_row(poll_rows, pollster, state):
     specified pollster and state. If no such row exists, returns None.
     """
     tempList = []
+    resp = None
     for row in poll_rows:
         if row.get("State") == state and row.get("Pollster") == pollster:
             tempList.append(row)
-            
+    
+    for index in range(0,len(tempList)-1):
+        if earlier_date(tempList[index].get("Date"),tempList[index+1].get("Date")):
+            tempList.insert(0,tempList[index+1])
+    
+    if len(tempList) > 1:
+        resp = tempList[0]
+    print resp
+    return resp
+
+    # poll_rows1 = [{"ID":1, "State":"WA", "Pollster":"A", "Date":"Jan 07 2010"}]
+    
+    # assert most_recent_poll_row(poll_rows1, "A", "OR") == {"ID":4, "State":"OR", "Pollster":"A", "Date":"Feb 10 2010"}
+
+                      
 ################################################################################
 # Problem 3: Pollster predictions
 ################################################################################
@@ -248,7 +262,13 @@ def main():
     """
     # Read state edges from the 2008 election
     edges_2008 = state_edges(read_csv("data/2008-results.csv"))
-    
+    poll_rows1 = [{"ID":1, "State":"WA", "Pollster":"A", "Date":"Jan 07 2010"},
+              {"ID":2, "State":"WA", "Pollster":"B", "Date":"Mar 21 2010"},
+              {"ID":3, "State":"WA", "Pollster":"A", "Date":"Jan 08 2010"},
+              {"ID":4, "State":"OR", "Pollster":"A", "Date":"Feb 10 2010"},
+              {"ID":5, "State":"WA", "Pollster":"B", "Date":"Feb 10 2010"},
+              {"ID":6, "State":"WA", "Pollster":"B", "Date":"Mar 22 2010"}]
+    most_recent_poll_row(poll_rows1, 'A', 'WA')
     # Read pollster predictions from the 2008 and 2012 election
     polls_2008 = pollster_predictions(read_csv("data/2008-polls.csv"))
     polls_2012 = pollster_predictions(read_csv("data/2012-polls.csv"))
