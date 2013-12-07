@@ -8,6 +8,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import operator
 import random
+import collections
 
 
 ###
@@ -98,24 +99,27 @@ def friends(graph, user):
     """Returns a set of the friends of the given user, in the given graph.
     The parameter 'user' is the string name of a person in the graph.
     """
-    graph.neighbors(user)
-    
     return set(graph.neighbors(user))
     
-print friends(rj, "Mercutio")
+#print friends(rj, "Mercutio")
 
 
 def friends_of_friends(graph, user):
     """Returns a set of friends of friends of the given user, in the given graph.
     The result does not include the given user nor any of that user's friends.
     """
-    for i in friends(graph, user):
-       #graph.neighbors_iter(i)
-       return set(graph.neighbors_iter(i))
+    fof = set()    # set of friends of friends of user      
+    friendsSet = friends(graph, user)    # set of friends of user
+    
+    for x in friendsSet:
+        for i in friends(graph, x):
+            if i != user and i not in friendsSet:
+                fof.add(i)
+    return fof
         
 print friends_of_friends(rj, "Mercutio")
 
-#assert friends_of_friends(rj, "Mercutio") == set(['Benvolio', 'Capulet', 'Friar Laurence', 'Juliet', 'Montague'])
+assert friends_of_friends(rj, "Mercutio") == set(['Benvolio', 'Capulet', 'Friar Laurence', 'Juliet', 'Montague'])
 
 
 def common_friends(graph, user1, user2):
