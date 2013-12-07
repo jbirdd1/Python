@@ -101,9 +101,7 @@ def friends(graph, user):
     """
     return set(graph.neighbors(user))
     
-#print friends(rj, "Mercutio")
-
-
+    
 def friends_of_friends(graph, user):
     """Returns a set of friends of friends of the given user, in the given graph.
     The result does not include the given user nor any of that user's friends.
@@ -111,10 +109,10 @@ def friends_of_friends(graph, user):
     fof = set()    # set of friends of friends of user      
     friendsSet = friends(graph, user)    # set of friends of user
     
-    for x in friendsSet:
-        for i in friends(graph, x):
-            if i != user and i not in friendsSet:
-                fof.add(i)
+    for friend in friendsSet:
+        for friend in friends(graph, friend):
+            if friend != user and friend not in friendsSet:
+                fof.add(friend)
     return fof
         
 print friends_of_friends(rj, "Mercutio")
@@ -124,17 +122,24 @@ assert friends_of_friends(rj, "Mercutio") == set(['Benvolio', 'Capulet', 'Friar 
 
 def common_friends(graph, user1, user2):
     """Returns the set of friends that user1 and user2 have in common."""
-    print "To be implemented"
+    common = set()
+    friendsSet1 = friends(graph, user1)
+    friendsSet2 = friends(graph, user2)
+    
+    for friend in friendsSet1:
+        if friend in friendsSet2:
+            common.add(friend)
+    return common
 
-#assert common_friends(practice_graph,"A", "B") == set(['C'])
-#assert common_friends(practice_graph,"A", "D") == set(['B', 'C'])
-#assert common_friends(practice_graph,"A", "E") == set([])
-#assert common_friends(practice_graph,"A", "F") == set(['C'])
+assert common_friends(practice_graph,"A", "B") == set(['C'])
+assert common_friends(practice_graph,"A", "D") == set(['B', 'C'])
+assert common_friends(practice_graph,"A", "E") == set([])
+assert common_friends(practice_graph,"A", "F") == set(['C'])
 
-#assert common_friends(rj, "Mercutio", "Nurse") == set()
-#assert common_friends(rj, "Mercutio", "Romeo") == set()
-#assert common_friends(rj, "Mercutio", "Juliet") == set(["Romeo"])
-#assert common_friends(rj, "Mercutio", "Capulet") == set(["Escalus", "Paris"])
+assert common_friends(rj, "Mercutio", "Nurse") == set()
+assert common_friends(rj, "Mercutio", "Romeo") == set()
+assert common_friends(rj, "Mercutio", "Juliet") == set(["Romeo"])
+assert common_friends(rj, "Mercutio", "Capulet") == set(["Escalus", "Paris"])
 
 
 def number_of_common_friends_map(graph, user):
